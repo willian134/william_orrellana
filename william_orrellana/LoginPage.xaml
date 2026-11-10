@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="william_orrellana.LoginPage"
+             Title="Acceso">
+
+    <Grid BackgroundColor="#0F172A" Padding="25">
+        <Border BackgroundColor="#1E293B" 
+                Stroke="#334155" 
+                StrokeThickness="1" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" 
+                WidthRequest="360"
+                Padding="25">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="16"/>
+            </Border.StrokeShape>
+
+            <VerticalStackLayout Spacing="18">
+
+                <!-- LOGO VECTORIAL DE SEGURIDAD (CORREGIDO PARA NET MAUI) -->
+                <Grid HeightRequest="100" WidthRequest="100" HorizontalOptions="Center">
+                    <!-- Resplandor / Marco Exterior -->
+                    <Border BackgroundColor="#0284C7" 
+                            Opacity="0.2" 
+                            HeightRequest="95" 
+                            WidthRequest="95" 
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="47.5"/>
+                        </Border.StrokeShape>
+                    </Border>
+
+                    <!-- Contenedor del Logo de Seguridad -->
+                    <Border BackgroundColor="#0F172A" 
+                            Stroke="#00B0FF" 
+                            StrokeThickness="2" 
+                            HeightRequest="80" 
+                            WidthRequest="80" 
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="40"/>
+                        </Border.StrokeShape>
+
+                        <!-- Escudo y Estrella de Seguridad -->
+                        <Path Data="M12,2 L22,12 L12,22 L2,12 Z M12,6 L16,12 L12,18 L8,12 Z" 
+                              Fill="#00B0FF" 
+                              Aspect="Uniform" 
+                              HeightRequest="42" 
+                              WidthRequest="42" 
+                              HorizontalOptions="Center" 
+                              VerticalOptions="Center"/>
+                    </Border>
+                </Grid>
+
+                <Label Text="SISTEMA DE ACCESO" 
+                       TextColor="#00B0FF" 
+                       FontSize="20" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center"/>
+
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Usuario" TextColor="#94A3B8" FontSize="13"/>
+                    <Entry x:Name="txtUsuario" 
+                           Placeholder="Ingrese su usuario" 
+                           BackgroundColor="#0F172A"/>
+
+                    <Label Text="Contraseña" TextColor="#94A3B8" FontSize="13"/>
+                    <Entry x:Name="txtClave" 
+                           IsPassword="True" 
+                           Placeholder="Ingrese su contraseña" 
+                           BackgroundColor="#0F172A"/>
+                </VerticalStackLayout>
+
+                <Button Text="INGRESAR" 
+                        Clicked="btnIniciar_Clicked" 
+                        BackgroundColor="#00B0FF"
+                        Margin="0,10,0,0"/>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>

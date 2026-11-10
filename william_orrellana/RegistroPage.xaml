@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="william_orrellana.RegistroPage"
+             Title="Registro">
+
+    <ScrollView BackgroundColor="#0F172A">
+        <VerticalStackLayout Padding="20" Spacing="15" MaximumWidthRequest="650">
+
+            <Label x:Name="lblUsuarioConectado" 
+                   TextColor="#94A3B8" 
+                   HorizontalOptions="End" 
+                   FontSize="13" 
+                   FontAttributes="Italic"/>
+
+            <Label Text="FORMULARIO DE REGISTRO" 
+                   FontSize="20" 
+                   FontAttributes="Bold" 
+                   TextColor="#00B0FF" 
+                   HorizontalOptions="Center"/>
+
+            <Border BackgroundColor="#1E293B" Stroke="#334155" Padding="15">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="12">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*, *" RowSpacing="10" ColumnSpacing="15">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Fecha:" TextColor="#E2E8F0" VerticalOptions="Center"/>
+                        <DatePicker Grid.Row="0" Grid.Column="1" x:Name="dpFecha" TextColor="#E2E8F0" BackgroundColor="#0F172A"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="País:" TextColor="#E2E8F0" VerticalOptions="Center"/>
+                        <Picker Grid.Row="1" Grid.Column="1" x:Name="pkPais" Title="Seleccione País" TextColor="#E2E8F0" TitleColor="#64748B" BackgroundColor="#0F172A">
+                            <Picker.Items>
+                                <x:String>Ecuador</x:String>
+                                <x:String>Perú</x:String>
+                                <x:String>Colombia</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Ciudad:" TextColor="#E2E8F0" VerticalOptions="Center"/>
+                        <Picker Grid.Row="2" Grid.Column="1" x:Name="pkCiudad" Title="Seleccione Ciudad" TextColor="#E2E8F0" TitleColor="#64748B" BackgroundColor="#0F172A">
+                            <Picker.Items>
+                                <x:String>Loja</x:String>
+                                <x:String>Quito</x:String>
+                                <x:String>Cuenca</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Monto Inicial ($):" TextColor="#E2E8F0" VerticalOptions="Center"/>
+                        <Entry Grid.Row="3" Grid.Column="1" x:Name="txtMontoInicial" Keyboard="Numeric" Placeholder="Ej. 500" BackgroundColor="#0F172A"/>
+
+                        <Button Grid.Row="4" Grid.Column="0" Text="Calcular Cuota" Clicked="btnCalcular_Clicked" BackgroundColor="#00B0FF"/>
+                        <Entry Grid.Row="4" Grid.Column="1" x:Name="txtPagoMensual" IsEnabled="False" TextColor="#00E676" FontAttributes="Bold" BackgroundColor="#0F172A"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border BackgroundColor="#1E293B" Stroke="#334155" Padding="15">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, *" ColumnSpacing="10" RowSpacing="5">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Nombre" TextColor="#94A3B8" FontSize="12"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Apellido" TextColor="#94A3B8" FontSize="12"/>
+                    <Label Grid.Row="0" Grid.Column="2" Text="Edad" TextColor="#94A3B8" FontSize="12"/>
+
+                    <Entry Grid.Row="1" Grid.Column="0" x:Name="txtNombre" Placeholder="Nombre" BackgroundColor="#0F172A"/>
+                    <Entry Grid.Row="1" Grid.Column="1" x:Name="txtApellido" Placeholder="Apellido" BackgroundColor="#0F172A"/>
+                    <Entry Grid.Row="1" Grid.Column="2" x:Name="txtEdad" Keyboard="Numeric" Placeholder="Edad" BackgroundColor="#0F172A"/>
+                </Grid>
+            </Border>
+
+            <Button Text="VER RESUMEN FINAL" Clicked="btnResumen_Clicked" BackgroundColor="#00B0FF" HeightRequest="50" Margin="0,5,0,15"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
